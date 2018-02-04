@@ -20,3 +20,14 @@
 - has_many :messages
 - has_many :groups, through: :members
 - has_many :members
+
+
+## messages_table
+|Coulumn|Type|Options|
+|-------|----|-------|
+|body|text||
+|image|string||
+|user_id|integer|foreign_key: true|
+|group_id|integer|foreign_key: true|
+
+
