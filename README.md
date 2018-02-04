@@ -13,7 +13,7 @@
 ## users_table
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, index: true|
 |e-mail|string|null: false, unique: true|
 
 ### Association
