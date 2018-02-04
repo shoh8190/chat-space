@@ -39,3 +39,8 @@
 |Coulumn|Type|Options|
 |-------|----|-------|
 |name|string|null :false|
+
+### Association
+- has_many :messages
+- has_many :users, through: :members
+- has_many :members
