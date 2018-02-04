@@ -34,3 +34,8 @@
 - belongs_to :user
 - belongs_to :group
 
+
+## groups_table
+|Coulumn|Type|Options|
+|-------|----|-------|
+|name|string|null :false|
