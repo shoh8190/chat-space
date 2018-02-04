@@ -8,3 +8,10 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+
+## users_table
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|e-mail|string|null: false, unique: true|
