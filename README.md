@@ -15,3 +15,8 @@
 |------|----|-------|
 |name|string|null: false|
 |e-mail|string|null: false, unique: true|
+
+### Association
+- has_many :messages
+- has_many :groups, through: :members
+- has_many :members
