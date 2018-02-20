@@ -1,1 +1,43 @@
+.container
+  .notification-of-new-group
+    チャットグループが作成されました。
 
+  = render partial: "side"
+
+  .main
+    .main__header
+      .main__header__group-name
+        %h1
+          SAMPLEグループ
+      .main__header__member-list
+        %p
+          Members
+      .main__header__edit
+        %p
+          Edit
+
+    .main__chat
+      .main__chat__post
+        .main__chat__post__name
+          %h3
+            Member 1
+          %p
+            2018/11/11 11:11:11
+        .main__chat__post__message
+          %p
+            message
+        .main__chat__post__name
+          %h3
+            Member 2
+          %p
+            2018/2/2 22:22:22
+        .main__chat__post__message
+          %p
+            message
+
+    .main__form
+      %input{type: "text", placeholder: "type a message"}
+      %i.main__form__icon
+        %span.fa.fa-image
+      .main__form__btn
+        Send

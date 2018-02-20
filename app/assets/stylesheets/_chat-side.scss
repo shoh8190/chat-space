@@ -1,0 +1,47 @@
+.side {
+  box-sizing: border-box;
+  float: left;
+  color: #fff;
+  height: 100vh;
+  width: 300px;
+  display: inline-block;
+
+    &__menu {
+      box-sizing: border-box;
+      background: #253141;
+      font: bold;
+      font-size: 16px;
+      height: 100px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 35px;
+
+      &__name{
+        display: inline-block;
+        font-weight: bold;
+      }
+
+      &__icons{
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+      }
+    }
+
+    &__group-lists{
+      box-sizing: border-box;
+      background-color: #2f3e51;
+      height: calc(100vh - 100px);
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 20px;
+      &__group-name{
+        font-size: 15px;
+      }
+      &__newest-massage{
+        font-size: 11px;
+        padding-top:5px;
+        padding-bottom:40px;
+      }
+    }
+}
