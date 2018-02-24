@@ -2,10 +2,11 @@
   .side__menu
     .side__menu__name
       %p
-        NAME
+        = current_user.name
     .side__menu__icons
       %span.fa.fa-pencil-square-o
-      %span.fa.fa-cog
+        = link_to edit_user_path(current_user) do
+          %span.fa.fa-cog
 
   .side__group-lists
     .side__group-lists__group
