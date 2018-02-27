@@ -1,5 +1,8 @@
 ja:
   activerecord:
+    attributes:
+      group:
+        name: グループ名
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"

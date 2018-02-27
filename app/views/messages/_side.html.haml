@@ -4,9 +4,10 @@
       %p
         = current_user.name
     .side__menu__icons
-      %span.fa.fa-pencil-square-o
-        = link_to edit_user_path(current_user) do
-          %span.fa.fa-cog
+      = link_to new_group_path do
+        %span.fa.fa-pencil-square-o
+      = link_to edit_user_path(current_user) do
+        %span.fa.fa-cog
 
   .side__group-lists
     .side__group-lists__group
