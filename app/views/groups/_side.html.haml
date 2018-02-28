@@ -10,16 +10,8 @@
         %span.fa.fa-cog
 
   .side__group-lists
-    .side__group-lists__group
+    - current_user.groups.each do |group|
       .side__group-lists__group-name
-        %h4
-          SAMPLEグループ
+        = group.name
       .side__group-lists__newest-massage
-        %p
-          まだメッセージがありません。
-      .side__group-lists__group-name
-        %h4
-          SAMPLEグループ
-      .side__group-lists__newest-massage
-        %p
-          まだメッセージがありません。
+        メッセージはまだありません。
