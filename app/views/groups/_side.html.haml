@@ -11,7 +11,8 @@
 
   .side__group-lists
     - current_user.groups.each do |group|
-      .side__group-lists__group-name
-        = group.name
-      .side__group-lists__newest-massage
-        メッセージはまだありません。
+      = link_to group_messages_path(group) do
+        .side__group-lists__group-name
+          = group.name
+        .side__group-lists__newest-massage
+          = group.show_last_message
