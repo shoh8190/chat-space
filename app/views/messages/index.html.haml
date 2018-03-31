@@ -18,7 +18,7 @@
     .main__chat
       = render partial: 'message', collection: @messages
     .main__form
-      = form_for [@group, @message] do |f|
+      = form_for [@group, @message], html: {id: 'message_form'} do |f|
         = f.text_field :content, class: 'main__form__message', placeholder: 'type a message'
         %i.main__form__icon
           %span.fa.fa-image
