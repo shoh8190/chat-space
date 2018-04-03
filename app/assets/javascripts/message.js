@@ -1,5 +1,10 @@
 $(function(){
   function buildHTML(message){
+    if(message.image == null){
+      var image = "";
+    } else {
+      var image = `${message.image}`;
+    }
     var html = `<div class="main__chat__post">
                   <div class="main__chat__post__name">
                     <h3> ${message.user_name} </h3>
@@ -7,6 +12,7 @@ $(function(){
                   </div>
                   <div class="main__chat__post__message">
                     <p> ${message.content} </P>
+                    <img src ="${image}">
                   </div>
                </div>`
     return html;
