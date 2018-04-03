@@ -97,6 +97,9 @@
       width: 40px;
       line-height: 50px;
       text-align: center;
+      .hidden{
+        display: none;
+      }
     }
     &__btn{
       cursor: pointer;

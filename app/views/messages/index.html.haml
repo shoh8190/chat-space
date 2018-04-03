@@ -20,6 +20,7 @@
     .main__form
       = form_for [@group, @message], html: {id: 'message_form'} do |f|
         = f.text_field :content, class: 'main__form__message', placeholder: 'type a message'
-        %i.main__form__icon
-          %span.fa.fa-image
+        = f.label :image, class: 'main__form__icon' do
+          %i.fa.fa-image
+          = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: 'main__form__btn'
