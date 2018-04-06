@@ -9,7 +9,8 @@
           = @group.name
       .main__header__member-list
         %p
-          Members
+          - @group.members.each do |member|
+            = member.user.name
       .main__header__edit
         = link_to edit_group_path(@group) do
           %p
