@@ -22,7 +22,7 @@
       = f.label :"チャットメンバー", class: 'chat-group-form__label'
     .chat-group-form__field--right
       #chat-group-users
-        #chat-group-user-22.chat-group-user.clearfix
+        .chat-group-user.clearfix
           %input{name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}"}
           %p.chat-group-user__name
             = current_user.name
@@ -30,3 +30,4 @@
     .chat-group-form__field--left
     .chat-group-form__field--right
       =f.submit class: 'chat-group-form__action-btn'
+

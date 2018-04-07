@@ -19,21 +19,13 @@ $(function(){
   }
 
   function addUser(user){
-    // console.log(user.userName);
     var html = `<div class="chat-group-user clearfix">
+                  <input name='group[user_ids][]' type='hidden' value="${user.userId}">
                   <p class="chat-group-user__name">${user.userName}</p>
                     <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove" data-user-id=${user.userId} data-user-name=${user.userName}>削除</a>
                 </div>`
     member_list.append(html);
     }
-
-    function revertUser(user){
-    var html = `<div class="chat-group-user clearfix">
-                  <p class="chat-group-user__name">${user.userName}</p>
-                    <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=${user.userId} data-user-name=${user.userName}>追加</a>
-               </div>`
-    user_list.append(html);
-      }
 
   $("#user-search-field").on("keyup", function(){
     var input = $("#user-search-field").val();
