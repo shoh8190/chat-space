@@ -46,8 +46,6 @@ $(function(){
     function update(){
     var id = $('.main__chat__post').last().attr('messageId');
     var link = window.location.pathname;
-    console.log(id);
-    //console.log(link);
     if (link.match(/\/groups\/\d+\/messages/)){
   $.ajax({
       url: link,
@@ -56,7 +54,6 @@ $(function(){
       dataType:'json'
   })
   .done(function(json){
-    console.log(json[0].content);
     var insertHTML ='';
     if (json.id !== 0){
     json.forEach(function(message){
