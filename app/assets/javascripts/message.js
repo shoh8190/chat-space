@@ -5,7 +5,7 @@ $(function(){
     } else {
       var image = `${message.image}`;
     }
-    var html = `<div class="main__chat__post" messageId="${message.id}">
+    var html = `<div class="main__chat__post" id="${message.id}">
                   <div class="main__chat__post__name">
                     <h3> ${message.user_name} </h3>
                     <p> ${message.created_at} </p>
@@ -44,7 +44,7 @@ $(function(){
   var interval = setInterval(update, 5000);
 
     function update(){
-    var id = $('.main__chat__post').last().attr('messageId');
+    var id = $('.main__chat__post').last().attr('id');
     var link = window.location.pathname;
     if (link.match(/\/groups\/\d+\/messages/)){
   $.ajax({
@@ -54,14 +54,12 @@ $(function(){
       dataType:'json'
   })
   .done(function(json){
-    var insertHTML ='';
-    if (json.id !== 0){
+    if (json.length !== 0){
     json.forEach(function(message){
-      insertHTML = buildHTML(message);
-      $('.main__chat').append(insertHTML);
+      var html = buildHTML(message);
+      $('.main__chat').append(html);
     });
     }
-    $('#message_form')[0].reset();
     $('.main__chat').animate({scrollTop: $(".main__chat")[0].scrollHeight}, 'slow');
    })
   .fail(function(data){
