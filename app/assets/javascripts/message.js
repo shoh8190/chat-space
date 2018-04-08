@@ -32,7 +32,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.main__chat').append(html)
-      $('.main__form__message').val('')
+      $('#message_form')[0].reset();
       $('.main__chat').animate({scrollTop: $(".main__chat")[0].scrollHeight}, 'slow');
     })
     .fail(function(){
@@ -44,7 +44,7 @@ $(function(){
   var interval = setInterval(update, 5000);
 
     function update(){
-    var id = $('.main__chat__post').last().attr('message_id');
+    var id = $('.main__chat__post').last().attr('messageId');
     var link = window.location.pathname;
     console.log(id);
     //console.log(link);
@@ -56,7 +56,7 @@ $(function(){
       dataType:'json'
   })
   .done(function(json){
-    // console.log(json[0].content);
+    console.log(json[0].content);
     var insertHTML ='';
     if (json.id !== 0){
     json.forEach(function(message){
@@ -64,7 +64,7 @@ $(function(){
       $('.main__chat').append(insertHTML);
     });
     }
-    $('.main__form__message').val('');
+    $('#message_form')[0].reset();
     $('.main__chat').animate({scrollTop: $(".main__chat")[0].scrollHeight}, 'slow');
    })
   .fail(function(data){
