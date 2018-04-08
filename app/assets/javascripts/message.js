@@ -5,7 +5,7 @@ $(function(){
     } else {
       var image = `${message.image}`;
     }
-    var html = `<div class="main__chat__post">
+    var html = `<div class="main__chat__post" messageId="${message.id}">
                   <div class="main__chat__post__name">
                     <h3> ${message.user_name} </h3>
                     <p> ${message.created_at} </p>
@@ -33,11 +33,46 @@ $(function(){
       var html = buildHTML(data);
       $('.main__chat').append(html)
       $('.main__form__message').val('')
-      $('.main__chat').animate({scrollTop: $(".main__chat")[0].scrollHeight}, 'fast');
+      $('.main__chat').animate({scrollTop: $(".main__chat")[0].scrollHeight}, 'slow');
     })
     .fail(function(){
       alert('error');
     })
     return false;
   })
+
+  var interval = setInterval(update, 5000);
+
+    function update(){
+    var id = $('.main__chat__post').last().attr('message_id');
+    var link = window.location.pathname;
+    console.log(id);
+    //console.log(link);
+    if (link.match(/\/groups\/\d+\/messages/)){
+  $.ajax({
+      url: link,
+      type: 'GET',
+      data: {id: id},
+      dataType:'json'
+  })
+  .done(function(json){
+    // console.log(json[0].content);
+    var insertHTML ='';
+    if (json.id !== 0){
+    json.forEach(function(message){
+      insertHTML = buildHTML(message);
+      $('.main__chat').append(insertHTML);
+    });
+    }
+    $('.main__form__message').val('');
+    $('.main__chat').animate({scrollTop: $(".main__chat")[0].scrollHeight}, 'slow');
+   })
+  .fail(function(data){
+    alert('自動更新に失敗しました');
+  })
+  }else{
+    clearInterval(interval);
+  }}
 });
+
+
