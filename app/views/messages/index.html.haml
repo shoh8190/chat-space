@@ -23,5 +23,5 @@
         = f.text_field :content, class: 'main__form__message', placeholder: 'type a message', autocomplete: "off"
         = f.label :image, class: 'main__form__icon' do
           %i.fa.fa-image
-          = f.file_field :image, class: 'hidden'
+          = f.file_field :image, class: 'hidden main__form__image'
         = f.submit 'Send', class: 'main__form__btn'
