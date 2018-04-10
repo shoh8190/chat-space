@@ -1,17 +1,6 @@
 $(function(){
-  // $('.main__form__message').keypress(function(e){
-  //   if(e.witch && e.witch === 13 || e.keyCode && e.keyCode === 13){
-  //     id(!$(this).val().match(/\S/g)){
-  //       return false;
-  //     }
-  //   }
-  // });
-  function buildHTML(message){
-    if(message.image == null){
-      var image = "";
-    } else {
-      var image = `${message.image}`;
-    }
+ function buildHTML(message){
+    var image = (message.image == null) ? "" : `${message.image}`;
     var html = `<div class="main__chat__post" data-message-id="${message.id}">
                   <div class="main__chat__post__name">
                     <h3> ${message.user_name} </h3>
@@ -66,10 +55,10 @@ $(function(){
 
     function update(){
     var id = $('.main__chat__post').last().data('messageId');
-    var link = window.location.pathname;
-    if (link.match(/\/groups\/\d+\/messages/)){
+    var url = window.location.href;
+    if (url.match(/\/groups\/\d+\/messages/)){
   $.ajax({
-      url: link,
+      url: url,
       type: 'GET',
       data: {id: id},
       dataType:'json',
