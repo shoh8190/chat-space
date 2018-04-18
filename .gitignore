@@ -18,3 +18,4 @@
 
 /public/
 /spec/
+config/secrets.yml
