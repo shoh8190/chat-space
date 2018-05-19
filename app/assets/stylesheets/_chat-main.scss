@@ -37,12 +37,12 @@
 
   &__chat{
     background: #FAFAFA;
-    height: calc(100% - 190px);
+    height: calc(100% - 100px - 90px);
     padding-top: 46px;
     padding-left: 40px;
     padding-right: 40px;
-    margin-bottom: 90px;
     overflow: auto;
+    box-sizing: border-box;
     &__post{
       padding-bottom: 40px;
       &__name{
